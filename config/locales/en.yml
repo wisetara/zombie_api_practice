@@ -21,3 +21,4 @@
 
 en:
   hello: "Hello world"
+  zombie_message: "Watch out for %{name}!"
