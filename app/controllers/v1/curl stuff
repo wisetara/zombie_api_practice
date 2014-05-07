@@ -1,0 +1,8 @@
+curl -I -H "Authorization: Token token=a45fb396579a25458d23208560742610" \ -I -H "Accept: application/json" -i http://cs-zombies-dev.com:3000/zombies
+
+curl -H "Authorization: Token token=a45fb396579a25458d23208560742610" \
+-H -i "Accept: application/json" http://cs-zombies-dev.com:3000/zombies
+
+curl -H "Authorization: Token token=a45fb396579a25458d23208560742610" \ -H "Accept: application/json" http://cs-zombies-dev.com:3000/zombies
+
+curl -I -H http://cs-zombies-dev.com:3000/zombies \ -I -H "Authorization: Token token=a45fb396579a25458d23208560742610" \ -I -H "Accept: application/json"

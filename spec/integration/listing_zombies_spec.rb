@@ -44,4 +44,18 @@ class ListingZombiesTest < ActionDispatch::IntegrationTest
     assert_equal 200, response.status
     assert_equal Mime::XML, response.content_type
   end
+
+  setup { @user = User.create!(username: 'foo', password: 'secret') }
+
+  test 'valid authentication lists zombies' do
+    get '/zombies', {}, { 'Authorization' => encode_credentials(@user.username, @user.password) }
+    assert_equal 200, response.status
+    assert_equal Mime::JSON, response.content_type
+  end
+
+  test 'invalid authentication responds with proper status code' do
+    get '/zombies'
+  end
+
+
 end
